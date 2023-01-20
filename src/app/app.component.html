@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="header">
+    <div class="header__banner"
+         [ngStyle]="{'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('+headerBGUrl+')'}">
+      <h2>{{trending?.results[0].title}}</h2>
+      <div class="header__buttons">
+        <button class="play-button">
+          <mat-icon>arrow_right</mat-icon>
+          <span>Oynat</span>
+        </button>
+        <button class="more-button">
+          <mat-icon>info</mat-icon>
+          <span>Daha Fazla Bilgi</span>
+        </button>
+      </div>
+    </div>
+   <div class="header__main" id="stickyHeader" [class.sticky]="sticky" #stickHeader>
+     <div class="header__left">
+       <a routerLink="/">
+         <img src="assets/netflix.svg" alt="logo">
+       </a>
+       <ul>
+         <li class="active"><a href="#">Ana Sayfa</a></li>
+         <li><a href="#">TV Dizileri</a></li>
+         <li><a href="#">Filmler</a></li>
+         <li><a href="#">Listem</a></li>
+       </ul>
+     </div>
+     <div class="header__right">
+       <ul>
+         <li><a href="#"><mat-icon>search</mat-icon></a></li>
+         <li><a href="#">Children</a></li>
+         <li><a href="#"><mat-icon>card_giftcard</mat-icon></a></li>
+         <li><a href="#"><mat-icon>notifications</mat-icon></a></li>
+         <li>
+           <img src="https://occ-0-4345-3647.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABRGTK96GBeqNw5zzYXnoa8oVjSjhuk7SuseuKTmgEKwpcCB59994UWb6wd7d1WONZOuzJwbLNpzG5Okfo4rSDLg.png?r=ee6"
+                alt="avatar">
+         </li>
+       </ul>
+     </div>
+   </div>
+  </div>
+  <div class="body" style="margin-top: 30rem;">
+    <app-slider title="Trendler" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="En Çok Oy Alan" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Şimdi Oynatılan" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Popüler" [movies]="popular" [sliderConfig]="sliderConfig"></app-slider>
+  </div>
+</div>
